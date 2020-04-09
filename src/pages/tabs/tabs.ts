@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
+import { WaterPage } from '../water/water';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 
@@ -9,9 +9,14 @@ import { HomePage } from '../home/home';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab1Root = ContactPage;
+  tab1Icon = 'add';
+
+  tab2Root = HomePage;
+  tab2Icon = 'home';
+
+  tab3Root = WaterPage;
+  tab3Icon = 'ios-water';
 
   constructor() {
 

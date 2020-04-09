@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'flower',
+  templateUrl: 'flower.html'
 })
-export class HomePage {
+export class FlowerComponent {
 
+  text: string;
 
   fecha = '30/02/2020';
   name = 'Maka';
