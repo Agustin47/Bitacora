@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Flower } from '../../models';
+
 
 @Component({
   selector: 'flower',
@@ -7,15 +9,15 @@ import { NavController } from 'ionic-angular';
 })
 export class FlowerComponent {
 
-  text: string;
+  @Input() data : Flower;
 
-  fecha = '30/02/2020';
-  name = 'Maka';
+
+  date = '30/02/2020';
+  name = 'linda'
   genetic = 'Lemon Haze';
   period = 'Automatica';
 
   constructor(public navCtrl: NavController) {
-
   }
 
 }

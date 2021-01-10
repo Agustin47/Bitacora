@@ -5,5 +5,8 @@
 </ion-header>
 
 <ion-content padding>
-  <flower></flower>
+
+  <div *ngFor="let f of flowers">
+    <flower [data]="f"></flower>
+  </div>
 </ion-content>

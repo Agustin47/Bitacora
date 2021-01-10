@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Flower } from '../../models';
+import { Context } from '../../models/context/context';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  protected flowers = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public context: Context) {
+    console.log(context);
+    this.context.flowers.get()
+        .then( val => this.flowers = val );
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+  }
+
+  add(){
+    this.context.flowers.add({
+      id: 'asdfa',
+      name: 'prueba',
+      date: '2020/02/05',
+      genetic: 'ipa',
+      period: 'nock'
+    } as Flower);
+    
   }
 
 }
