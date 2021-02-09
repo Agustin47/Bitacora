@@ -1,10 +1,42 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>new-fower</ion-title>
+    <ion-title>Nueva Planta</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<h3> NADA </h3>
-<flower></flower>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Nombre
+      </ion-label>
+      <ion-input [(ngModel)]="newFlower.name" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Fecha Nac.
+      </ion-label>
+      <ion-datetime max="2050-12-31" displayFormat="DD/MM/YYYY" [(ngModel)]="newFlower.date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Genetica
+      </ion-label>
+      <ion-input [(ngModel)]="newFlower.genetic" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Periodo
+      </ion-label>
+      <ion-input [(ngModel)]="newFlower.period" ></ion-input>
+    </ion-item>
+    <button ion-button round (click)="save()" block>Guardar</button>
+
+
+  </ion-list>
+  
+
+
+
+
 </ion-content>

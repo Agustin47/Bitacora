@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
+import { GeneralProvider } from '../../provider/general';
 
-/**
- * Generated class for the WaterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,7 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WaterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  protected date: string;
+  protected product: string;
+
+  constructor(private _general: GeneralProvider) {
+    this.date = this._general.getTodayString();
+    this.product = '';
   }
 
   ionViewDidLoad() {

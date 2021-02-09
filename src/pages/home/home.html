@@ -1,11 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>home</ion-title>
+    <ion-title>Lista de flores</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
   <div *ngFor="let f of flowers">
     <flower [data]="f"></flower>
   </div>
