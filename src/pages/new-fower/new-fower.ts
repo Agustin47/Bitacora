@@ -12,6 +12,7 @@ import { GeneralProvider } from '../../provider/general';
 export class NewFowerPage {
 
   protected newFlower: Flower;
+  protected gender: any;
 
   constructor(public _context: Context, public _general: GeneralProvider
     ) {
@@ -19,11 +20,8 @@ export class NewFowerPage {
   }
 
   save(){
-
     console.log('Guardando...', this.newFlower);
-    this.newFlower.id = this._general.newGuid();
     this._context.flowers.add(this.newFlower);
-    
     this.clean();
   }
 
@@ -33,10 +31,11 @@ export class NewFowerPage {
 
   clean(){
     this.newFlower = {} as Flower;
-    this.newFlower.date = this._general.getTodayString();
+    this.newFlower.id = '';
     this.newFlower.name = '';
-    this.newFlower.period = '';
+    this.newFlower.date = this._general.getTodayString();
     this.newFlower.genetic = '';
+    this.newFlower.period = '';
   }
 
 }

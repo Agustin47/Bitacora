@@ -1,0 +1,6 @@
+<ion-item>
+  <ion-label>
+    {{ title }}
+  </ion-label>
+  <ion-input value="0.00" [(ngModel)]="amount" (keypress)="onKeypress($event)" (ionChange)="formatNumber($event)" text-right></ion-input>
+</ion-item>

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Nueva Planta</ion-title>
+    <ion-title>Nueva planta</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -10,7 +10,7 @@
       <ion-label>
         Nombre
       </ion-label>
-      <ion-input [(ngModel)]="newFlower.name" ></ion-input>
+      <ion-input [(ngModel)]="newFlower.name" text-right ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>
@@ -22,21 +22,16 @@
       <ion-label>
         Genetica
       </ion-label>
-      <ion-input [(ngModel)]="newFlower.genetic" ></ion-input>
+      <ion-input [(ngModel)]="newFlower.genetic" text-right ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>
         Periodo
       </ion-label>
-      <ion-input [(ngModel)]="newFlower.period" ></ion-input>
+      <ion-input [(ngModel)]="newFlower.period" text-right ></ion-input>
     </ion-item>
-    <button ion-button round (click)="save()" block>Guardar</button>
-
+    <button ion-button round (click)="save()" block color="danger">Guardar</button>
 
   </ion-list>
   
-
-
-
-
 </ion-content>

@@ -10,19 +10,24 @@
       <ion-label>
         Planta
       </ion-label>
-      <ion-input [(ngModel)]="product" ></ion-input>
+      <ion-select [(ngModel)]="water.flowerId" interface="popover" mode="ios">
+        <ion-option *ngFor="let f of flowers" [value]="f.id">{{ f.name }}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>
         Fecha
       </ion-label>
-      <ion-datetime max="2050-12-31" displayFormat="DD/MM/YYYY" [(ngModel)]="date"></ion-datetime>
+      <ion-datetime max="2050-12-31" displayFormat="DD/MM/YYYY" [(ngModel)]="water.date"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>
         Producto
       </ion-label>
-      <ion-input [(ngModel)]="product" ></ion-input>
+      <ion-input [(ngModel)]="water.product" text-right ></ion-input>
     </ion-item>
+    <decimal-input title="Cantidad (ml/L)" [amount]="water.amountInMillilitres" (valueUpdate)="amountEvent($event)"></decimal-input>
+    <button ion-button round (click)="save()" block color="danger">Guardar</button>
+
   </ion-list>
 </ion-content>

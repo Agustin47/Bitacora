@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import { Flower } from '../../models';
 import { Context } from '../../models/context/context';
 
 @IonicPage()
@@ -13,9 +12,7 @@ export class HomePage {
   protected flowers = [];
 
   constructor(public context: Context) {
-    console.log(context);
-    this.context.flowers.get()
-        .then( val => this.flowers = val );
+    this.refreshList();
   }
 
   ionViewDidLoad() {
@@ -23,8 +20,11 @@ export class HomePage {
   }
 
   ionViewWillEnter(){
-    this.context.flowers.get()
-        .then( val => this.flowers = val );
+    this.refreshList();
+    console.log(this.flowers);
   }
   
+  refreshList(){
+    this.context.flowers.getAll().then( val => this.flowers = val );
+  }
 }

@@ -1,0 +1,13 @@
+
+
+.toolbar-title-md {
+    text-align: center;
+}
+
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+  border-bottom-color: #dedede !important;
+  -webkit-box-shadow: inset 0 -1px 0 0 #dedede !important;
+  box-shadow: inset 0 -1px 0 0 #dedede !important;
+}
+
+
