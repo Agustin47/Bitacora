@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{ me.name }}
+    </ion-title>
+    <ion-icon name="rose"></ion-icon>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  ACA TENGO QUE HACER UNA LISTA DE CARDS (COMPONENTE) QUE MUESTRE LOS
+    RIEGOS Y LAS FOTOS ORDENADOS POR FECHA. QUE DIGA SI ES RIEGO O FOTO CON SU FECHA Y UN ICONO DESCRIPTIVO.
+    AL HACER CLICK MUESTRE EL DETALLE DEL RIEGO O LA FOTO EN UN MODAL QUE OCUPE TODO
+
+
+  <div *ngFor="let w of waters">
+
+    producto: {{ w.product }}
+    <br />
+    fecha : {{ w.date }}
+  </div>
+
+</ion-content>

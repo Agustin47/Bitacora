@@ -1,0 +1,14 @@
+page-flower {
+    .toolbar-content{
+        display: flex;
+        //flex-wrap: nowrap;
+        justify-content: stretch;
+        .icon{
+            display: flex;
+            align-items: center;
+            padding-right: 2rem;
+            font-size: x-large;
+        }
+        
+    }
+}

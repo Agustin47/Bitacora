@@ -1,7 +1,12 @@
 
 
-.toolbar-title-md {
-    text-align: center;
+
+
+.header {
+  text-align: center;
+  .toolbar-background{
+    background-color: $title-bar-color !important;
+  }
 }
 
 .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{

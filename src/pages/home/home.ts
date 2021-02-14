@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+import { Flower } from '../../models';
 import { Context } from '../../models/context/context';
 
 @IonicPage()
@@ -9,22 +10,22 @@ import { Context } from '../../models/context/context';
 })
 export class HomePage {
 
-  protected flowers = [];
+  protected flowers: Flower[] = [];
 
-  constructor(public context: Context) {
+  constructor(public context: Context, public navCtrl: NavController) {
     this.refreshList();
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
   }
 
   ionViewWillEnter(){
     this.refreshList();
-    console.log(this.flowers);
   }
   
   refreshList(){
     this.context.flowers.getAll().then( val => this.flowers = val );
+  }
+
+  openFlower(event: any, flower: Flower){
+    console.log(flower);
+    this.navCtrl.push('FlowerPage', { me: flower });
   }
 }

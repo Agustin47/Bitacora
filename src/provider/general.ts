@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { StringBuilder } from './helpers/string-builder';
 
 @Injectable()
 export class GeneralProvider {

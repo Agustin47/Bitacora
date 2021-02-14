@@ -4,8 +4,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <div *ngFor="let f of flowers">
-    <flower [data]="f"></flower>
+    <flower [data]="f" (click)="openFlower($event, f)"></flower>
   </div>
 </ion-content>

@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-list>
     <ion-item>
       <ion-label>
@@ -27,7 +27,7 @@
       <ion-input [(ngModel)]="water.product" text-right ></ion-input>
     </ion-item>
     <decimal-input title="Cantidad (ml/L)" [amount]="water.amountInMillilitres" (valueUpdate)="amountEvent($event)"></decimal-input>
-    <button ion-button round (click)="save()" block color="danger">Guardar</button>
+    <button ion-button round (click)="save()" block color="primary">Guardar</button>
 
   </ion-list>
 </ion-content>
