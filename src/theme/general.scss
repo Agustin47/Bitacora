@@ -1,6 +1,18 @@
 
 
+@mixin no-border {
+  border: none !important;
+  box-shadow: none !important;
+}
 
+@mixin border-item {
+  border-bottom: 1px solid #dedede !important;
+  box-shadow: inset 0 -1px 0 0 #dedede !important;
+}
+
+@mixin item-padding {
+  padding: 0rem $item-padding-x;
+}
 
 .header {
   text-align: center;
@@ -9,10 +21,26 @@
   }
 }
 
-.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
-  border-bottom-color: #dedede !important;
-  -webkit-box-shadow: inset 0 -1px 0 0 #dedede !important;
-  box-shadow: inset 0 -1px 0 0 #dedede !important;
+.list {
+  .item {
+    @include item-padding;
+    @include no-border;
+    .item-inner{
+      @include border-item;
+    }
+  }
 }
 
+.label {
+  color: #222 !important;
+}
 
+.save-box {
+  margin-top: 1rem;
+  padding: 1rem 6rem;
+}
+
+.add-box {
+  margin-top: 0.5rem;
+  padding: 1rem 9rem;
+}

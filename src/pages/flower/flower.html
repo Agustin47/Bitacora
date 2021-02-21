@@ -15,10 +15,22 @@
 
 
   <div *ngFor="let w of waters">
-
-    producto: {{ w.product }}
-    <br />
-    fecha : {{ w.date }}
+    <ion-card>
+      <ion-card-header>
+        fecha : {{ w.date }}    
+      </ion-card-header>
+      <ion-card-content>
+        producto: {{ w.product }}
+      </ion-card-content>
+    </ion-card>
   </div>
+
+
+  <ion-card (click)="openImage()">
+    <img src="../../assets/imgs/plants/plant1.jpg"/>
+    <div class="card-title">Amsterdam</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
+
 
 </ion-content>

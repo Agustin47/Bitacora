@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams } from 'ionic-angular';
-import { Flower, Water } from '../../models';
-import { FlowerProvider } from '../../provider/flower';
+import { IonicPage, ModalController, NavParams } from 'ionic-angular';
+import { Flower, Water } from 'models';
+import { FlowerProvider } from 'provider';
 
 @IonicPage()
 @Component({
@@ -13,7 +13,9 @@ export class FlowerPage {
   protected me: Flower;
   protected waters: Water[];
 
-  constructor(private flowerProvider: FlowerProvider,public navParams: NavParams) {
+  constructor(private flowerProvider: FlowerProvider,public navParams: NavParams,
+      private modalCtr: ModalController
+    ) {
     this.clean();
     this.me = this.navParams.data.me;
     this.flowerProvider.getWaters(this.me.id)
@@ -27,6 +29,10 @@ export class FlowerPage {
   clean(){
     this.me = {} as Flower;
     this.waters = [];
+  }
+
+  openImage(){
+    this.modalCtr.create('ImageZoomPage').present();
   }
 
 }

@@ -10,7 +10,7 @@ $danger:     #f53d3d;
 $light:      #f4f4f4;
 $dark:       #222;
 
-$title-bar-color:    #AEF359;
+$title-bar-color:    #00B300;
 
 $colors: (
   primary:    $primary,
@@ -19,6 +19,12 @@ $colors: (
   light:      $light,
   dark:       $dark
 );
+
+
+$item-padding-x: 0.75rem;
+
+
+
 
 @import "ionic.theme.default";
 @import "ionic.ionicons";

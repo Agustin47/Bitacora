@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { Flower } from '../../models';
-import { Context } from '../../models/context/context';
+import { Flower, Context } from 'models';
 
 @IonicPage()
 @Component({

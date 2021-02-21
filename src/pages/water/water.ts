@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import { Context, Flower, Water } from '../../models';
-import { GeneralProvider } from '../../provider/general';
+import { Context, Flower, Water } from 'models';
+import { GeneralProvider } from 'provider';
 
 
 @IonicPage()
@@ -13,6 +13,7 @@ export class WaterPage {
 
   protected water: Water;
   protected flowers: Flower[];
+  protected products: any[];
 
   constructor(private _general: GeneralProvider, private _context: Context) {
     this.initialize();
@@ -21,6 +22,11 @@ export class WaterPage {
   initialize(){
     this.clean();
     this.flowers = [];
+    this.products = [
+      {
+        name: '', amountInMillilitres: "0.00"
+      }
+    ];
     this.updateFlowers();
   }
 
@@ -45,6 +51,16 @@ export class WaterPage {
 
   amountEvent(event){
     this.water.amountInMillilitres = event;
+  }
+
+  amountProductEvent(event, product: any){
+    product.amountInMillilitres = event;
+  }
+
+  addProduct(){
+    this.products.push({
+      name: '', amountInMillilitres: "0.00"
+    });
   }
 
   clean(){

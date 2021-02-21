@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import { Context, Flower } from '../../models';
-import { GeneralProvider } from '../../provider/general';
+import { Context, Flower } from 'models';
+import { GeneralProvider } from 'provider';
 
 
 @IonicPage()

@@ -20,14 +20,27 @@
       </ion-label>
       <ion-datetime max="2050-12-31" displayFormat="DD/MM/YYYY" [(ngModel)]="water.date"></ion-datetime>
     </ion-item>
-    <ion-item>
-      <ion-label>
-        Producto
-      </ion-label>
-      <ion-input [(ngModel)]="water.product" text-right ></ion-input>
-    </ion-item>
-    <decimal-input title="Cantidad (ml/L)" [amount]="water.amountInMillilitres" (valueUpdate)="amountEvent($event)"></decimal-input>
-    <button ion-button round (click)="save()" block color="primary">Guardar</button>
+    <decimal-input title="Total litros" [amount]="water.amountInMillilitres" (valueUpdate)="amountEvent($event)"></decimal-input>
+
+    <ion-card class="product-card">
+      <div class="product-item" *ngFor="let p of products">
+        <ion-item>
+          <ion-label>
+            Producto
+          </ion-label>
+          <ion-input [(ngModel)]="p.name" text-right ></ion-input>
+        </ion-item>
+        <decimal-input title="Cantidad ml" [amount]="p.amountInMillilitres" (valueUpdate)="amountProductEvent($event, p)"></decimal-input>
+      </div>
+      
+      <div class="add-box">
+        <button ion-button icon-only round outline (tap)="addProduct()" block><ion-icon name="color-fill"></ion-icon></button>
+      </div>
+    </ion-card>
+    
+    <div class="save-box" >
+      <button ion-button round (click)="save()" block color="primary">Guardar</button>
+    </div>
 
   </ion-list>
 </ion-content>
